@@ -1,0 +1,116 @@
+{
+  "stats": {
+    "asserts": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "results": [
+    {
+      "type": "test",
+      "name": "Hello Component",
+      "id": 0,
+      "passed": 3,
+      "failed": 0,
+      "tests": [
+        {
+          "type": "test",
+          "name": "greet prop",
+          "id": 1,
+          "parent": 0,
+          "passed": 1,
+          "failed": 0,
+          "asserts": [
+            {
+              "id": 0,
+              "ok": true,
+              "name": "Should not render component",
+              "operator": "equal",
+              "objectPrintDepth": 5,
+              "actual": "<div class=\"greeting hello\"><h1>Hello, World!</h1></div>",
+              "expected": "<div class=\"greeting hello\"><h1>Hello, World!</h1></div>",
+              "extend": {
+                "component": {
+                  "fn": "function Component(props) {\n      return _react2.default.createElement(\n        'div',\n        { className: 'greeting hello' },\n        _react2.default.createElement(\n          'h1',\n          null,\n          props.greet ? props.greet : 'Hello',\n          ', ',\n          props.who ? props.who : 'World!'\n        )\n      );\n    }",
+                  "props": {
+                    "greet": "Hello"
+                  },
+                  "propTypes": {}
+                },
+                "description": "This component is meant to throw an error due to the fact that the actual does not match what was expected.",
+                "prop": {
+                  "type": "string",
+                  "required": true,
+                  "description": "Greet prop adds "
+                }
+              },
+              "test": 1,
+              "type": "assert",
+              "error": {}
+            }
+          ]
+        },
+        {
+          "type": "test",
+          "name": "comp2",
+          "id": 2,
+          "parent": 0,
+          "passed": 1,
+          "failed": 0,
+          "asserts": [
+            {
+              "id": 0,
+              "ok": true,
+              "name": "Correctly renders component",
+              "operator": "equal",
+              "objectPrintDepth": 5,
+              "actual": "<div class=\"greeting hello\"><h1>Hello, world!</h1></div>",
+              "expected": "<div class=\"greeting hello\"><h1>Hello, world!</h1></div>",
+              "extend": {
+                "component": {
+                  "fn": "function Component(props) {\n      return _react2.default.createElement(\n        'div',\n        { className: 'greeting hello' },\n        _react2.default.createElement(\n          'h1',\n          null,\n          props.greet\n        )\n      );\n    }",
+                  "props": {
+                    "greet": "Hello, world!"
+                  },
+                  "propTypes": {}
+                },
+                "el": "otis"
+              },
+              "test": 2,
+              "type": "assert",
+              "error": {}
+            }
+          ]
+        },
+        {
+          "type": "test",
+          "name": "has class1",
+          "id": 3,
+          "parent": 0,
+          "passed": 1,
+          "failed": 0,
+          "asserts": [
+            {
+              "id": 0,
+              "ok": true,
+              "name": "has class hello",
+              "operator": "ok",
+              "objectPrintDepth": 5,
+              "actual": true,
+              "expected": true,
+              "extend": {
+                "component": {
+                  "fn": "function Component() {\n      return _react2.default.createElement(\n        'div',\n        { className: 'greeting hello' },\n        _react2.default.createElement(\n          'h1',\n          null,\n          'Hello, world!'\n        )\n      );\n    }",
+                  "propTypes": {}
+                },
+                "description": "Component shoud have class hello"
+              },
+              "test": 3,
+              "type": "assert",
+              "error": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
