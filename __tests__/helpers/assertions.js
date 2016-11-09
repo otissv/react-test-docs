@@ -91,6 +91,7 @@ export default  function assertions () {
       };
     });
 
+
     process.stdout.write(JSON.stringify({
       stats,
       results: transformRows

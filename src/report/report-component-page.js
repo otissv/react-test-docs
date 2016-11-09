@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 const titlize = (str) => {
@@ -6,27 +6,21 @@ const titlize = (str) => {
 }
 
 const Page = (props) => {
-  const item = props.item;
+  const id = props.testViewId;
+  const item =  props.results[id[0]].tests[id[1] - 1].asserts[id[2]];
+
+  if (!item) return <div></div>;
+
   const extend = item.extend;
   const itemName = titlize(item.name)
-console.log(extend.prop);
+
   if (item.ok) {
     // Passed test
+    /* eslint-disable no-eval */
     const Component = eval('('+extend.component.fn+')');
+    /* eslint-enable no-eval */
+
     const props = extend.component.props;
-    // const propTypes = extend.component.propTypes;
-    // const firstPropType = Object.keys(propTypes)[0];
-    // const initial = { [firstPropType]: firstPropType };
-    // const z = propTypes[firstPropType];
-
-    // console.log(z);
-    // const xpropTypes = Object.keys(propTypes).reduce((prev, curr) => {
-    //   return {
-    //     ...prev,
-    //     // [curr]: eval('('+propTypes[curr]+')')
-    //   };
-    // }, initial);
-
 
     return <div>
       <h2 className='App-passed--color'>{itemName}: Passed</h2>
@@ -54,3 +48,14 @@ console.log(extend.prop);
 }
 
 export default Page;
+
+
+/* <div className="App-sidebar">
+  <ul>
+    <Nav
+      onParentlick={(e) => e}
+      onTestClick={(e) => e}
+      onAssertClick={(e) => this.setView(e)}
+    />
+  </ul>
+</div> */

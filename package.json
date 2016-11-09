@@ -15,6 +15,11 @@
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-router": "^3.0.0",
+    "react-uikit-button": "^2.0.2",
+    "react-uikit-codeblock": "^2.0.2",
+    "react-uikit-grid": "^2.0.3",
+    "react-uikit-nav": "^2.0.2",
     "tape": "^4.6.2",
     "watch": "^1.0.1"
   },
@@ -23,7 +28,7 @@
     "build": "react-scripts build",
     "testx": "react-scripts test --env=jsdom",
     "test": "babel-node test-runner.js > __tests__/docs/docs.json",
-    "test:watch": "watch 'npm run test' ./",
+    "test:watch": "watch 'npm run test' ./src",
     "eject": "react-scripts eject"
   }
 }

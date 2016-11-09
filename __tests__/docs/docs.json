@@ -30,17 +30,20 @@
               "expected": "<div class=\"greeting hello\"><h1>Hello, World!</h1></div>",
               "extend": {
                 "component": {
-                  "fn": "function Component(props) {\n      return _react2.default.createElement(\n        'div',\n        { className: 'greeting hello' },\n        _react2.default.createElement(\n          'h1',\n          null,\n          props.greet ? props.greet : 'Hello',\n          ', ',\n          props.who ? props.who : 'World!'\n        )\n      );\n    }",
+                  "fn": "function Hello(props) {\n  return _react2.default.createElement(\n    'div',\n    { className: 'greeting hello' },\n    _react2.default.createElement(\n      'h1',\n      null,\n      props.greet ? props.greet : 'Hello',\n      ', ',\n      props.who ? props.who : 'World!'\n    )\n  );\n}",
                   "props": {
-                    "greet": "Hello"
+                    "greet": "Hello",
+                    "who": "World!"
                   },
                   "propTypes": {}
                 },
                 "description": "This component is meant to throw an error due to the fact that the actual does not match what was expected.",
-                "prop": {
-                  "type": "string",
-                  "required": true,
-                  "description": "Greet prop adds "
+                "props": {
+                  "greet": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Greet prop adds a custom greet"
+                  }
                 }
               },
               "test": 1,

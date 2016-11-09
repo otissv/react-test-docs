@@ -1,7 +1,7 @@
 
 import React from 'react';
 import assertions from './helpers/assertions';
-
+import Hello from '../src/hello/hello';
 
 
 const test = assertions();
@@ -10,18 +10,10 @@ const test = assertions();
 test('Hello Component', nested => {
   nested.test('greet prop',
     assert => {
-    const Component = (props) => <div className='greeting hello'>
-      <h1>{props.greet ? props.greet : 'Hello'}, {props.who ? props.who : 'World!'}
-    </h1></div>;
 
-    const props = { greet: 'Hello' };
+    const props = { greet: 'Hello', who: 'World!' };
 
-    Component.propTypes = {
-      greet: React.PropTypes.string,
-      who:   React.PropTypes.string.isRequired
-    }
-
-    const actual = { component: Component, props };
+    const actual = { component: Hello, props };
     const expect = <div className='greeting hello'><h1>Hello, World!</h1></div>;
 
     assert.equalsJSX(actual, expect,
@@ -39,11 +31,6 @@ test('Hello Component', nested => {
     assert => {
     const Component = (props) => <div className='greeting hello'><h1>{props.greet}</h1></div>;
     const props = { greet: 'Hello, world!' };
-
-    Component.propTypes = {
-      greet: React.PropTypes.string,
-      who:   React.PropTypes.string.isRequired
-    }
 
     const actual = { component: Component, props };
     const expect = <div className='greeting hello'><h1>Hello, world!</h1></div>;

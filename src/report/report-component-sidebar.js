@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
-import docs from '../__tests__/docs/docs';
+import React from 'react';
+import uikit from 'react-uikit-base';
 
-const Nav = (props) => {
-  const items = docs.results.map(parent => <li key={parent.id}>
+const ReportSidebar = (props) => {
+  const cleanProps = uikit.helpers.cleanProps([
+    'items',
+    'onAssertClick'
+  ])(props);
+
+  const items = props.items.map(parent => <li key={parent.id}>
     <span className={parent.failed ? 'App-failed--color' : null}>
       {parent.name}
     </span>
@@ -28,7 +33,7 @@ const Nav = (props) => {
 
   </li>);
 
-  return <ul>{items}</ul>
+  return <ul {...cleanProps}>{items}</ul>
 };
 
-export default Nav;
+export default ReportSidebar;
