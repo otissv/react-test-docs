@@ -20,6 +20,7 @@
     "react-uikit-codeblock": "^2.0.2",
     "react-uikit-grid": "^2.0.3",
     "react-uikit-nav": "^2.0.2",
+    "react-uikit-table": "^2.0.1",
     "tape": "^4.6.2",
     "watch": "^1.0.1"
   },

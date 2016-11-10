@@ -1,10 +1,10 @@
 import React from 'react';
 import autobind  from 'class-autobind';
 import Grid from 'react-uikit-grid'
-import docs from '../../__tests__/docs/docs';
+import docs from '../../../__tests__/docs/docs';
 import ReportSidebar from './report-component-sidebar';
 import ReportPage from './report-component-page';
-
+import '../styles/report.css';
 
 class ReportView extends React.Component {
   constructor () {
@@ -45,7 +45,7 @@ class ReportView extends React.Component {
         items={this.state.results}
         onAssertClick={this.setView}
       />
-      <ReportPage testViewId={this.state.view} results={this.state.results} />
+      <ReportPage col='3-4' testViewId={this.state.view} results={this.state.results} />
     </Grid>
   }
 };

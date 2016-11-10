@@ -1,6 +1,6 @@
 import App from './app/components/app-component';
 import Home from './app/components/app-component-home';
-import ReportView from './report/report-component-view';
+import ReportView from './report/components/report-component-view';
 
 
 const routes = {

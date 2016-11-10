@@ -14,14 +14,17 @@ test('Hello Component', nested => {
     const props = { greet: 'Hello', who: 'World!' };
 
     const actual = { component: Hello, props };
-    const expect = <div className='greeting hello'><h1>Hello, World!</h1></div>;
+    const expect = <div className='greeting hello'><h1>ello, World!</h1></div>;
 
     assert.equalsJSX(actual, expect,
       'Should not render component', {
         description:'This component is meant to throw an error due to the fact that the actual does not match what was expected.',
-        props: {
-          greet: { type: 'string', required: true, description: 'Greet prop adds a custom greet' }
-        }
+        props:  [{
+            prop: 'greet',
+            type: 'string',
+            required: true,
+            description: 'Greet prop adds a custom greet'
+        }]
       });
     assert.end();
   });
@@ -36,7 +39,15 @@ test('Hello Component', nested => {
     const expect = <div className='greeting hello'><h1>Hello, world!</h1></div>;
 
     assert.equalsJSX(actual, expect,
-      'Correctly renders component', { el: 'otis'});
+      'Correctly renders component', {
+        description:'This component is meant to throw an error due to the fact that the actual does not match what was expected.',
+        props:  [{
+            prop: 'greet',
+            type: 'string',
+            required: true,
+            description: 'Greet prop adds a custom greet'
+        }]
+      });
     assert.end();
   });
 

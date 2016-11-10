@@ -16,7 +16,7 @@ class App extends Component {
 
     this.state = {
       watchTests: true,
-      stats: docs.stats,
+      stats: docs.stats
     };
   }
 

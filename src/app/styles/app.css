@@ -14,19 +14,27 @@ html, body {
 }
 
 .App-header-title {
+  color: #fff;
   float: left;
   font-size: 20px;
 }
 
 .App-header-stats {
+  color: #fff;
+  text-align: right;
   padding: 5px 15px;
 }
 
-.App-sidebar {
+.App-section {
+  background: #fff;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  margin: 0 20px 20px 0;
+  padding: 20px;
+  border-radius: 2px;
 }
 
 .App-play--color {
-  color: #ffffff;
+  color: #fff;
 }
 
 .App-passed--color {
@@ -35,9 +43,4 @@ html, body {
 
 .App-failed--color {
   color: #b71c1c;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

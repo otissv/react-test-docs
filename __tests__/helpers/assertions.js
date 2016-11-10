@@ -1,5 +1,5 @@
 'use strict';
-import tape from 'tape';
+import tape from '../../tape';
 import addAssertions from 'extend-tape';
 import React from 'react';
 import {

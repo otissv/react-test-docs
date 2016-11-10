@@ -15,16 +15,18 @@ const AppStats= (props) =>  {
   });
 
   return <div {...cleanProps}>
-    <span className={failed ?  null: 'App-passed--color'}>
-      {asserts} tests{failed ? ', ' : ''}
-    </span>
     <Button
       onClick={props.onClick}
       context='link'
       className='App-play--color'
     >
-      {props.watch ? 'Watch' : 'Pause'}
+      {props.watch ? 'Watching' : 'Pause'}
     </Button>
+
+    <span className={failed ?  null: 'App-passed--color'}>
+      {asserts} tests{failed ? ', ' : ''}
+    </span>
+
     <span className={failed ?  'App-failed--color' : null}>{failed ? `${failed} failed.`: null}</span>
   </div>
 };
