@@ -2,16 +2,11 @@ import React from 'react';
 import uikit from 'react-uikit-base';
 import Codeblock from 'react-uikit-codeblock';
 import Table from 'react-uikit-table';
-
-
-const titlize = (str) => {
-  return `${str.charAt(0).toUpperCase()}${str.substr(1, str.length)}`
-}
+import titlize from '../../shared/titlize';
 
 
 const Page = (props) => {
-  const id = props.testViewId;
-  const item =  props.results[id[0]].tests[id[1] - 1].asserts[id[2]];
+  const item = props.asserts;
 
   if (!item) return <div></div>;
 

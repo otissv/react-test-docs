@@ -5,7 +5,7 @@ import uikit from 'react-uikit-base';
 const AppBrand = (props) =>  {
   const cleanProps = uikit.helpers.cleanProps([])(props);
   return <Link
-    className='App-header-title'
+    className='App-title'
     to='/'
   >
     <h2 {...cleanProps}>Test docs</h2>

@@ -3,6 +3,10 @@ import glob from 'glob';
 import path from 'path';
 
 
+function promise (fn) {
+  return new Promise((resolve, reject) => fn(resolve, reject));
+};
+
 const config = {
   base: './',
   folder : './__tests__/**/*-test.js',

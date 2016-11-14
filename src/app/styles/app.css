@@ -6,41 +6,104 @@ html, body {
   /*text-align: center;*/
 }
 
+.App-header,
+.App-footer {
+  background-color: #222;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  height: 26px;
+  margin-left: 0;
+  padding: 6px 0;
+  width: 100%;
+}
 
 .App-header {
-  background-color: #222;
-  height: 26px;
-  padding: 6px;
+  position: fixed;
+  top: 0;
 }
 
-.App-header-title {
-  color: #fff;
-  float: left;
+.App-footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.App-title h2 {
   font-size: 20px;
+  padding-left: 10px;
 }
 
-.App-header-stats {
+.App-stats {
   color: #fff;
   text-align: right;
-  padding: 5px 15px;
+  padding: 0 15px;
 }
 
 .App-section {
   background: #fff;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 20px 20px 0;
   padding: 20px;
   border-radius: 2px;
 }
 
-.App-play--color {
+.App-play {
+  border-radius: 2px;
+  font-weight: bold;
+  margin-right: 6px;
+  width: 70px;
+  transition: all 0.2s ease;
+}
+
+.App-play--wathching {
+  background-color: #8cc14c;
   color: #fff;
 }
 
+.App-play--wathching:active,
+.App-play--wathching:focus {
+  background-color: #72ae41;
+}
+
+.App-play--paused {
+  background-color: #404040;
+  color: #888;
+}
+
+.App-play--paused:hover,
+.App-play--paused:focus {
+  background-color: #808080;
+  color: #fff
+}
+
+
 .App-passed--color {
-  color: #1B5E20
+  color: #8ec73b;
 }
 
 .App-failed--color {
-  color: #b71c1c;
+  color: #e63b3b;
+}
+
+.App-open {
+  color: #444;
+  margin-left: -25px;
+}
+
+.App-main {
+  margin-top: 60px;
+  padding-bottom: 40px;
+}
+
+.uk-offcanvas-bar {
+  background-color: #222;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: transform 0.2s ease-in-out;
+}
+
+.uk-active .uk-offcanvas-bar {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.App-sidebar-failed--color>a {
+  color: #e63b3b;
 }

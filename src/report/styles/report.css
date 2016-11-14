@@ -1,8 +1,25 @@
-
-.Report-sidebar-headerr{
+.uk-nav-side .Report-sidebar-header {
   color: #909090;
 }
 
-.Report-sidebar li>a {
+.uk-nav-side .ReportSidebar-link a {
   color: #fff;
+}
+
+.uk-nav-side .ReportSidebar-link--failed a {
+  color: #e63b3b;
+}
+
+.uk-nav-side .ReportSidebar-link a:hover,
+.uk-nav-side .ReportSidebar-link a:active,
+.uk-nav-side .ReportSidebar-link a:focus,
+.uk-nav-side .ReportSidebar-link--failed a:hover,
+.uk-nav-side .ReportSidebar-link--failed a:active
+.uk-nav-side .ReportSidebar-link--failed a:focus {
+  color: #008eff;
+}
+
+.ReportSidebar-label {
+  color: #888;
+  padding: 5px 15px;
 }

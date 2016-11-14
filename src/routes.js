@@ -1,14 +1,13 @@
-import App from './app/components/app-component';
-import Home from './app/components/app-component-home';
-import ReportView from './report/components/report-component-view';
+import AppContainer from './app/app-container.js';
+import ReportContainer from './report/report-container';
 
 
 const routes = {
   path: '/',
-  component: App,
+  component: AppContainer,
   childRoutes: [
-    { indexRoute: { component: Home } },
-    { path: '/reports', component: ReportView },
+    { indexRoute: { component: ReportContainer } },
+    { path: '/reports', component: ReportContainer },
   ]
 }
 

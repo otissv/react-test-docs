@@ -1,7 +1,10 @@
 'use strict';
 import tape from '../../tape';
 import addAssertions from 'extend-tape';
+import chalk from 'chalk';
+import fs from 'fs';
 import React from 'react';
+import cuid from 'cuid';
 import {
   renderDom,
   renderJsx
@@ -19,7 +22,7 @@ export default  function assertions () {
     failed : 0
   };
 
-  tape.createStream({ objectMode: true }).on('data', function (row, x) {
+  tape.createStream({ objectMode: true }).on('data', function (row) {
 
     if (row.parent == null && row.type == 'test') {
       rows[row.id] = {
@@ -93,6 +96,7 @@ export default  function assertions () {
 
 
     process.stdout.write(JSON.stringify({
+      id: cuid(),
       stats,
       results: transformRows
     }, null, '  '));

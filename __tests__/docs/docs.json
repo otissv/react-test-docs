@@ -1,33 +1,34 @@
 {
+  "id": "civh6l3h000002umdjudpauee",
   "stats": {
-    "asserts": 3,
-    "passed": 2,
+    "asserts": 4,
+    "passed": 3,
     "failed": 1
   },
   "results": [
     {
       "type": "test",
-      "name": "Hello Component",
+      "name": "First file",
       "id": 0,
-      "passed": 2,
-      "failed": 1,
+      "passed": 3,
+      "failed": 0,
       "tests": [
         {
           "type": "test",
-          "name": "greet prop",
-          "id": 1,
+          "name": "comp1",
+          "id": 2,
           "parent": 0,
-          "passed": 0,
-          "failed": 1,
+          "passed": 1,
+          "failed": 0,
           "asserts": [
             {
               "id": 0,
-              "ok": false,
+              "ok": true,
               "name": "Should not render component",
               "operator": "equal",
               "objectPrintDepth": 5,
               "actual": "<div class=\"greeting hello\"><h1>Hello, World!</h1></div>",
-              "expected": "<div class=\"greeting hello\"><h1>ello, World!</h1></div>",
+              "expected": "<div class=\"greeting hello\"><h1>Hello, World!</h1></div>",
               "extend": {
                 "component": {
                   "fn": "function Hello(props) {\n  return _react2.default.createElement(\n    'div',\n    { className: 'greeting hello' },\n    _react2.default.createElement(\n      'h1',\n      null,\n      props.greet ? props.greet : 'Hello',\n      ', ',\n      props.who ? props.who : 'World!'\n    )\n  );\n}",
@@ -38,6 +39,7 @@
                   "propTypes": {}
                 },
                 "description": "This component is meant to throw an error due to the fact that the actual does not match what was expected.",
+                "main": true,
                 "props": [
                   {
                     "prop": "greet",
@@ -47,24 +49,16 @@
                   }
                 ]
               },
-              "test": 1,
+              "test": 2,
               "type": "assert",
-              "error": {
-                "columnNumber": "12",
-                "functionName": "Test.equalsJSX",
-                "message": "Should not render component",
-                "name": "Error",
-                "lineNumber": 139,
-                "stack": "Error: Should not render component\n    at Test.assert [as _assert] (/home/ninja/work/projects/test-docs/tape/lib/test.js:220:54)\n    at Test.bound [as _assert] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)\n    at Test.equal.Test.equals.Test.isEqual.Test.is.Test.strictEqual.Test.strictEquals (/home/ninja/work/projects/test-docs/tape/lib/test.js:355:10)\n    at Test.bound [as equals] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)\n    at Test.equalsJSX (/home/ninja/work/projects/test-docs/__tests__/helpers/assertions.js:139:12)\n    at Test.<anonymous> (/home/ninja/work/projects/test-docs/__tests__/extend-test.js:19:12)\n    at Test.<anonymous> (/home/ninja/work/projects/test-docs/node_modules/extend-tape/dist/index.js:30:25)\n    at Test.bound [as _cb] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)\n    at Test.run (/home/ninja/work/projects/test-docs/tape/lib/test.js:84:10)\n    at Test.bound [as run] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)",
-                "at": "Test.equalsJSX (/home/ninja/work/projects/test-docs/__tests__/helpers/assertions.js:139:12)"
-              }
+              "error": {}
             }
           ]
         },
         {
           "type": "test",
           "name": "comp2",
-          "id": 2,
+          "id": 3,
           "parent": 0,
           "passed": 1,
           "failed": 0,
@@ -95,7 +89,7 @@
                   }
                 ]
               },
-              "test": 2,
+              "test": 3,
               "type": "assert",
               "error": {}
             }
@@ -103,8 +97,8 @@
         },
         {
           "type": "test",
-          "name": "has class1",
-          "id": 3,
+          "name": "comp3",
+          "id": 4,
           "parent": 0,
           "passed": 1,
           "failed": 0,
@@ -124,9 +118,68 @@
                 },
                 "description": "Component shoud have class hello"
               },
-              "test": 3,
+              "test": 4,
               "type": "assert",
               "error": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "test",
+      "name": "Second File",
+      "id": 1,
+      "passed": 0,
+      "failed": 1,
+      "tests": [
+        {
+          "type": "test",
+          "name": "Second prop",
+          "id": 5,
+          "parent": 1,
+          "passed": 0,
+          "failed": 1,
+          "asserts": [
+            {
+              "id": 0,
+              "ok": false,
+              "name": "This is the second file",
+              "operator": "equal",
+              "objectPrintDepth": 5,
+              "actual": "<div class=\"greeting hello\"><h1>Hello, World!</h1></div>",
+              "expected": "<div class=\"greeting hello\"><h1>ello, World!</h1></div>",
+              "extend": {
+                "component": {
+                  "fn": "function Hello(props) {\n  return _react2.default.createElement(\n    'div',\n    { className: 'greeting hello' },\n    _react2.default.createElement(\n      'h1',\n      null,\n      props.greet ? props.greet : 'Hello',\n      ', ',\n      props.who ? props.who : 'World!'\n    )\n  );\n}",
+                  "props": {
+                    "greet": "Hello",
+                    "who": "World!"
+                  },
+                  "propTypes": {}
+                },
+                "description": "This component is meant to throw an error due to the fact that the actual does not match what was expected.",
+                "main": true,
+                "props": [
+                  {
+                    "prop": "greet",
+                    "type": "string",
+                    "required": true,
+                    "description": "Greet prop adds a custom greet"
+                  }
+                ]
+              },
+              "test": 5,
+              "type": "assert",
+              "error": {
+                "columnNumber": "12",
+                "functionName": "Test.equalsJSX",
+                "message": "This is the second file",
+                "name": "Error",
+                "lineNumber": 143,
+                "stack": "Error: This is the second file\n    at Test.assert [as _assert] (/home/ninja/work/projects/test-docs/tape/lib/test.js:220:54)\n    at Test.bound [as _assert] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)\n    at Test.equal.Test.equals.Test.isEqual.Test.is.Test.strictEqual.Test.strictEquals (/home/ninja/work/projects/test-docs/tape/lib/test.js:355:10)\n    at Test.bound [as equals] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)\n    at Test.equalsJSX (/home/ninja/work/projects/test-docs/__tests__/helpers/assertions.js:143:12)\n    at Test.<anonymous> (/home/ninja/work/projects/test-docs/__tests__/second-test.js:19:12)\n    at Test.<anonymous> (/home/ninja/work/projects/test-docs/node_modules/extend-tape/dist/index.js:30:25)\n    at Test.bound [as _cb] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)\n    at Test.run (/home/ninja/work/projects/test-docs/tape/lib/test.js:84:10)\n    at Test.bound [as run] (/home/ninja/work/projects/test-docs/tape/lib/test.js:65:32)",
+                "at": "Test.equalsJSX (/home/ninja/work/projects/test-docs/__tests__/helpers/assertions.js:143:12)"
+              }
             }
           ]
         }
